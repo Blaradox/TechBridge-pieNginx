@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "8ba174ba-3d87-4da5-87b0-536e55fbb3ff",
+    "name": "introducingExpress",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24042275"
+  },
+  "item": [
+    {
+      "name": "posting",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "readPies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/api/pie",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "pie"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "postPie",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "flavor",
+              "value": "blueberry",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:3000/api/pie",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "pie"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "putPie",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "flavor",
+              "value": "blueberry",
+              "type": "text"
+            },
+            {
+              "key": "newFlavor",
+              "value": "blueberry:aLaMode",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:3000/api/pie",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "pie"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletePie",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "flavor",
+              "value": "blueberry:aLaMode",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:3000/api/pie",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "pie"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

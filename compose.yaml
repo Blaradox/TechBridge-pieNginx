@@ -1,0 +1,14 @@
+services:
+  pieserver:
+    build:
+      context: ./pieServer
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+  nginx:
+    restart: always
+    build:
+      context: ./nginxProxy
+    ports:
+      - 8080:80
