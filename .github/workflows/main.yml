@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: Test pieServer code
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,6 +30,9 @@ jobs:
         run: npm test
 
   build:
+    name: Build Docker Containers
+    needs: test
+
     runs-on: ubuntu-latest
 
     steps:
