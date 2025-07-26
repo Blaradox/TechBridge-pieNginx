@@ -1,18 +1,17 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["node.js"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker compose build 
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: docker compose build
