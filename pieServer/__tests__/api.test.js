@@ -17,11 +17,14 @@ describe("Pie Routes", () => {
   });
   describe("POST /", () => {
     it("Should add a pie to the list of pies", async () => {
-      const response = await request(app).post("/").send({
+      const get_response = await request(app).get("/");
+      expect(get_response.status).toBe(200);
+      expect(get_response.body.pies).not.toContain("apple");
+      const post_response = await request(app).post("/").send({
         flavor: "apple",
       });
-      expect(response.status).toBe(201);
-      expect(response.body.pies).toContain("apple");
+      expect(post_response.status).toBe(201);
+      expect(post_response.body.pies).toContain("apple");
     });
   });
 });
