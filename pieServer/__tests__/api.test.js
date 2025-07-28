@@ -15,4 +15,12 @@ describe("Pie Routes", () => {
       expect(response.body.pies).toContain("cherry");
     });
   });
+  describe("POST /", () => {
+    it("Should add a pie to the list of pies", async () => {
+      const response = await request(app).post("/").send({
+        flavor: "apple",
+      });
+      expect(response.status).toBe(201);
+    });
+  });
 });
