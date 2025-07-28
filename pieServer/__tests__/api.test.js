@@ -21,6 +21,7 @@ describe("Pie Routes", () => {
         flavor: "apple",
       });
       expect(response.status).toBe(201);
+      expect(response.body.pies).toContain("apple");
     });
   });
 });
