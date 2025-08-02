@@ -41,8 +41,8 @@ jobs:
 
       - name: Execute tests in the running services
         run: |
-          curl --request GET \
-          --url "http://localhost:8080"
+          docker compose exec nginx /usr/bin/env \
+          curl -f "http://localhost:80" || exit 1
 
   build:
     name: Build Docker Containers
