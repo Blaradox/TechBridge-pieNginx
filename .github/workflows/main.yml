@@ -42,7 +42,7 @@ jobs:
       - name: Execute tests in the running services
         run: |
           docker compose exec nginx /usr/bin/env \
-          curl -f "http://localhost:80" || exit 1
+          curl -f --connect-timeout 3 "http://localhost:80" || exit 1
 
   build:
     name: Build Docker Containers
