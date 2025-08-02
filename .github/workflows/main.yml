@@ -46,7 +46,7 @@ jobs:
 
   build:
     name: Build Docker Containers
-    needs: test-pieServer test-nginx
+    needs: [test-pieServer, test-nginx]
 
     runs-on: ubuntu-latest
 
